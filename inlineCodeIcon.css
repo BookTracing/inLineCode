@@ -1,11 +1,24 @@
-.full-width-media .markdown-preview-view img:not(.link-favicon):not(.emoji):not([width]),
+.full-width-media .markdown-preview-view img:not(.link-favicon):not(.emoji):not([width]):not(.cm-widgetBuffer),
 .full-width-media .markdown-preview-view video,
-.full-width-media .markdown-source-view img:not(.link-favicon):not(.emoji):not([width]),
+.full-width-media .markdown-source-view img:not(.link-favicon):not(.emoji):not([width]):not(.cm-widgetBuffer),
 .full-width-media .markdown-source-view video {
     width: auto !important;
     margin-top: 0px !important;
     margin-bottom: 4px !important;
 }
 
+/* '새 창에서 열기' 실행했을 때 발생하는 문제 해결 */
+.markdown-preview-view .markdown-preview-section img:not(.link-favicon):not(.emoji):not([width]):not(.cm-widgetBuffer),
+.markdown-preview-view .markdown-preview-section video,
+.markdown-source-view .markdown-source-section img:not(.link-favicon):not(.emoji):not([width]):not(.cm-widgetBuffer),
+.markdown-source-view .markdown-source-section video {
+    width: auto !important;
+    margin-top: 0px !important;
+    margin-bottom: 4px !important;
+}
 
-
+img[src*="data:image/svg+xml"], img[src*="base64"],
+img.cm-widgetBuffer {
+    width: initial !important;
+    margin: initial !important;
+}
